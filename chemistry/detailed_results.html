@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Results</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #ffffff;
+        }
+
+        .results-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .result-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .result-item h3 {
+            color: #bbbbbb;
+            margin-top: 15px;
+        }
+
+        .result-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .exit-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .exit-btn:hover {
+            background-color: #555;
+        }
+
+        p {
+            color: #bbbbbb;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detailed Results</h1>
+    <div class="results-container" id="results-container">
+        <!-- Incorrect answers will be dynamically added here by the script -->
+    </div>
+    <button class="exit-btn" onclick="window.location.href='main.html'">Exit to Chapters</button>
+
+    <script>
+        // Retrieve the incorrect answers array from localStorage, or an empty array if none exists.
+        const incorrectAnswers = JSON.parse(localStorage.getItem('incorrectAnswers')) || [];
+        const resultsContainer = document.getElementById('results-container');
+
+        // Check if there are any incorrect answers to display.
+        if (incorrectAnswers.length === 0) {
+            resultsContainer.innerHTML = '<p>Congratulations! All answers were correct!</p>';
+        } else {
+            // Loop through each incorrect answer and create HTML elements to display it.
+            incorrectAnswers.forEach((item, index) => {
+                const resultItem = document.createElement('section');
+                resultItem.classList.add('result-item');
+
+                // --- Question ---
+                const questionLabel = document.createElement('h3');
+                questionLabel.textContent = `Question ${index + 1}`;
+                const questionImage = document.createElement('img');
+                questionImage.src = item.question;
+                questionImage.alt = `Question Image ${index + 1}`;
+
+                // --- User's Answer ---
+                const userAnswerLabel = document.createElement('h3');
+                userAnswerLabel.textContent = 'Your Answer (Incorrect):';
+                const userAnswerImage = document.createElement('img');
+                userAnswerImage.src = item.userAnswer;
+                userAnswerImage.alt = 'User\'s incorrect answer';
+
+                // --- Correct Answer ---
+                const correctAnswerLabel = document.createElement('h3');
+                correctAnswerLabel.textContent = 'Correct Answer:';
+                const correctAnswerImage = document.createElement('img');
+                correctAnswerImage.src = item.correctAnswer;
+                correctAnswerImage.alt = 'The correct answer';
+
+                // Append all created elements to the result item container.
+                resultItem.appendChild(questionLabel);
+                resultItem.appendChild(questionImage);
+                resultItem.appendChild(userAnswerLabel);
+                resultItem.appendChild(userAnswerImage);
+                resultItem.appendChild(correctAnswerLabel);
+                resultItem.appendChild(correctAnswerImage);
+
+                // Add the fully constructed result item to the main container.
+                resultsContainer.appendChild(resultItem);
+            });
+        }
+    </script>
+</body>
+</html>

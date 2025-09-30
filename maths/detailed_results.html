@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Results</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .results-container {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .result-item {
+            margin-bottom: 20px;
+        }
+
+        .result-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        .exit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .exit-btn:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        p {
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detailed Results</h1>
+    <div class="results-container" id="results-container">
+        <!-- Incorrect answers will be dynamically added here -->
+    </div>
+    <button class="exit-btn" onclick="window.location.href='main.html'">Exit</button>
+
+    <script>
+        const incorrectAnswers = JSON.parse(localStorage.getItem('incorrectAnswers')) || [];
+        const resultsContainer = document.getElementById('results-container');
+
+        if (incorrectAnswers.length === 0) {
+            resultsContainer.innerHTML = '<p>All answers were correct!</p>';
+        } else {
+            incorrectAnswers.forEach((item, index) => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+
+                const questionImage = document.createElement('img');
+                questionImage.src = item.question;
+                questionImage.alt = `Question ${index + 1}`;
+
+                const userAnswerLabel = document.createElement('p');
+                userAnswerLabel.textContent = 'Your Answer:';
+                const userAnswerImage = document.createElement('img');
+                userAnswerImage.src = item.userAnswer;
+                userAnswerImage.alt = 'Your Answer';
+
+                const correctAnswerLabel = document.createElement('p');
+                correctAnswerLabel.textContent = 'Correct Answer:';
+                const correctAnswerImage = document.createElement('img');
+                correctAnswerImage.src = item.correctAnswer;
+                correctAnswerImage.alt = 'Correct Answer';
+
+                resultItem.appendChild(questionImage);
+                resultItem.appendChild(document.createElement('br'));
+                resultItem.appendChild(userAnswerLabel);
+                resultItem.appendChild(userAnswerImage);
+                resultItem.appendChild(document.createElement('br'));
+                resultItem.appendChild(correctAnswerLabel);
+                resultItem.appendChild(correctAnswerImage);
+
+                resultsContainer.appendChild(resultItem);
+            });
+        }
+    </script>
+</body>
+</html>

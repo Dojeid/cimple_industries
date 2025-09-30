@@ -1,1 +1,183 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test - Cimple</title>
+
+    
+    
+    
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ClqeLH5lHrXeyLmakJJLD";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+
+
+
+
+
+
+
+</head>
+
+<body id="page-body" data-theme="dark">
+    <div id="particles-js" class="particles-background"></div>
+
+    <!-- Header is now outside the main wrapper for simpler positioning -->
+    <header id="main-header" class="header">
+        <div class="logo">
+            <span class="blinking-dot"></span>
+            <h1 id="logo-text" class="logo-text">Online Tests by Cimple</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="generator.html" class="nav-link">AI</a>
+        </nav>
+        <div class="header-actions">
+            <a id="get-started-btn" href="tests.html" class="btn btn-primary">
+                Get Started
+            </a>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section id="home" class="container hero">
+            <h2 class="hero-title">
+                <span class="text-cyan neon-effect">Exam</span>
+                <span class="text-purple neon-effect">Practice</span>
+                <span class="text-pink neon-effect">Reimagined</span>
+            </h2>
+            <p id="hero-subtext" class="hero-subtext fade-in-element">
+                A student-built platform for effective exam preparation. No corporate fluff, just real practice tools.
+            </p>
+            <div class="hero-cta fade-in-element">
+                <a href="tests.html" class="btn btn-gradient">
+                    View Subjects
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section (Why It Works) -->
+        <section id="features" class="container section animated-section">
+            <h2 class="section-title">
+                <span class="underline-cyan">Why It Works</span>
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-cyan-light"><i class="fas fa-bolt feature-icon text-cyan"></i></div>
+                    <h3 class="feature-card-title text-cyan">Instant Feedback</h3>
+                    <p class="feature-card-text">Get immediate results with detailed explanations for every question.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-purple-light"><i class="fas fa-chart-line feature-icon text-purple"></i></div>
+                    <h3 class="feature-card-title text-purple">Progress Tracking</h3>
+                    <p class="feature-card-text">Monitor your improvement with visual analytics and performance insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-pink-light"><i class="fas fa-users feature-icon text-pink"></i></div>
+                    <h3 class="feature-card-title text-pink">Community Powered</h3>
+                    <p class="feature-card-text">Tests created by students who've already aced the exams you're preparing for.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section (NEW LAYOUT) -->
+        <section id="how-it-works" class="container section animated-section">
+            <h2 class="section-title"><span class="underline-purple">How It Works</span></h2>
+            <div class="features-grid"> <!-- Re-using the same grid style for consistency -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-cyan-light"><span class="step-number text-cyan">1</span></div>
+                    <h3 class="feature-card-title text-cyan">Select Subject</h3>
+                    <p class="feature-card-text">Choose from a wide variety of subjects prepared by peers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-purple-light"><span class="step-number text-purple">2</span></div>
+                    <h3 class="feature-card-title text-purple">Take The Test</h3>
+                    <p class="feature-card-text">Simulate real exam conditions with our timed and structured tests.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper bg-pink-light"><span class="step-number text-pink">3</span></div>
+                    <h3 class="feature-card-title text-pink">Review Results</h3>
+                    <p class="feature-card-text">Analyze your performance with detailed insights and explanations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (NEW LAYOUT) -->
+        <section id="about" class="container section text-center animated-section">
+            <h2 class="section-title"><span class="underline-pink">About Us</span></h2>
+            <div class="content-card">
+                <p>Cimple was founded by a team of students who were frustrated with the complexity and high costs of existing online test platforms. We believe that effective study tools should be accessible and straightforward. Our mission is to create a community-driven space where students can prepare for exams with tools built by their peers, for their peers.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section (NEW LAYOUT) -->
+        <section id="contact" class="container section text-center animated-section">
+            <h2 class="section-title"><span class="underline-cyan">Contact Us</span></h2>
+            <div class="content-card">
+                <p>Have questions or feedback? We'd love to hear from you!</p>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope text-cyan"></i> <a href="mailto:support@cimple.com" class="contact-link">support@cimple.com</a></li>
+                    <li><i class="fas fa-phone-alt text-cyan"></i> +1 (123) 456-7890</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="get-started" class="container section text-center cta-section animated-section">
+            <h2 id="cta-heading" class="cta-heading">Ready to <span class="text-cyan">Ace</span> Your Exams?</h2>
+            <p id="cta-text" class="cta-text">Join thousands of students using our platform to study smarter and perform better.</p>
+            <button class="btn btn-gradient btn-large">Create Free Account</button>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer animated-section">
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <h2 class="logo-text">OnlineTest By Cimple</h2>
+                    <p class="footer-tagline">By students, for students</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Github"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="footer-credits">
+                    <p>Made by Saravanan</p><p>Supported by CIMPLE</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <a href="https://share.chatling.ai/s/bUJnw2KLl8uxscB" target="_blank" class="chatling-fab" aria-label="Open Chatbot">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+   
+   
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
